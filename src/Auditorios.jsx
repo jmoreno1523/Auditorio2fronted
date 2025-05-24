@@ -30,7 +30,7 @@ const Auditorios = () => {
   useEffect(() => {
     if (edificioSeleccionado) {
       setCargando(true);
-      axios.get(`http://localhost:5000/api/edificios/${edificioSeleccionado}`)
+      axios.get(`https://auditorio2backend.vercel.app/api/edificios/${edificioSeleccionado}`)
         .then(res => {
           setAuditorios(res.data);
           setErrorCarga('');
@@ -62,7 +62,7 @@ const Auditorios = () => {
     }
 
     try {
-      const res = await axios.post('http://localhost:5000/api/chatgpt', {
+      const res = await axios.post('https://auditorio2backend.vercel.app/api/chatgpt', {
         pregunta,
         edificio: edificioSeleccionado
       });

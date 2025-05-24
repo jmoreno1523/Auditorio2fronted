@@ -13,7 +13,7 @@ const AuditorioDetalle = () => {
     // Decodificar el nombre por si viene con %20 u otros caracteres especiales
     const nombreDecodificado = decodeURIComponent(edificio);
 
-    axios.get(`http://localhost:5000/api/edificios/${nombreDecodificado}`)
+    axios.get(`https://auditorio2backend.vercel.app/api/edificios/${nombreDecodificado}`)
       .then(res => {
         const encontrado = res.data.find(a => a._id === id);
         setAuditorio(encontrado);
